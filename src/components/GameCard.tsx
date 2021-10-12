@@ -8,14 +8,16 @@ import {
 
 interface GameCardProps extends TouchableOpacityProps {
   game: string;
+  bulls: number;
+  cows: number
 }
 
-export function GameCard({ game, ...rest }: GameCardProps) {
+export function GameCard({ game, bulls, cows, ...rest }: GameCardProps) {
   return (
     <TouchableOpacity style={styles.buttonGame} {...rest}>
       <Text style={styles.textGame}>{game}</Text>
-      <Text style={styles.statusGame}>bulls: {0}</Text>
-      <Text style={styles.statusGame}>cows: {0}</Text>
+      <Text style={styles.statusGame}>bulls: {bulls}</Text>
+      <Text style={styles.statusGame}>cows: {cows}</Text>
     </TouchableOpacity>
   );
 }
